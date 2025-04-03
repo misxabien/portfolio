@@ -1,95 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misxa Bien Germino</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@300;400;700;900&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Misxa Bien Germino</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth; 
+    }
+    body {
+      background-color: #48374c;
+      color: #f8f8d2;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background-color: transparent;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+    }
 
-    <style>
-  
-        body {
-            background: linear-gradient(-45deg,#baabc9,#7a5c8d,#c7a3d4,#9d74b0,#d6a7df);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: "Libre Baskerville", serif;
-        }
+    .logo img {
+      width: 50px;
+      height:50px;
+    }
 
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    nav a {
+      color: #f8f8d2;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      padding: 10px 15px;
+      border-radius: 20px;
+      transition: background 0.3s, transform 0.2s;
+    }
 
-        h1 {
-            color:#eaddca;
-            font-weight: bold;
-        }
+    nav a:hover {
+      background-color: #7b5d83;
+      transform: translateY(-2px);
+    }
+    .home {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 80px 80px;
+      min-height: 100vh;
+    }
 
-        p {
-            font-family: "Merriweather", serif;
-            font-size: 18px;
-            color: #eaddca;
-            margin-bottom: 3rem;
-        }
+    .text-content p {
+      font-size: 18px;
+      color: #ccc;
+    }
 
-        .circular-img {
-            width:220px; 
-            height:220px; 
-            border-radius: 50%;
-            border: 3px solid #eaddca;
-            margin-bottom: 3rem;
-        }
+    h1 {
+      font-size: 60px;
+      margin: 20px 0;
+    }
 
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
+    h1 span {
+      color: #f8f8d2;
+    }
 
-        .btn {
-            display: block;  
-            font-family: "Merriweather", serif;
-            border: 2px solid #eaddca;
-            background-color:#7a5c8d;
-            color: #eaddca;
-            padding: 10px 20px; 
-            width: 150px;
-            font-size: 16px;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            margin: 5px 0;
-            text-decoration: none;
-        }
+    .image-content img {
+      width: 400px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    section {
+      padding: 100px 80px;
+    }
 
-        .btn:hover {
-            background-color: #9d74b0;
-            color: rgb(233, 223, 229);
-        }
-    </style>
+  </style>
 </head>
 <body>
-    <div>
-        <img src="images/self-portrait.jpg" class="circular-img" alt="Picture of Misxa">
-    
-        <h1>Misxa Bien Germino</h1>
-        <p>an aspiring project manager</p>
-
-        <div class="buttons"> 
-            <a href="about.html" class="btn">About Me</a>
-            <a href="techstack.html"class="btn">Tech Stack</a>
-            <a href="#" class="btn">Contact Me</a>
-        </div>
+  <header>
+    <div class="logo">
+      <img src="images/logoweb.png" alt="MG Logo" width="50">
     </div>
+    <nav>
+        <a href="about.html">About Me</a>
+        <a href="techstack.html">Tech Stack</a>
+        <a href="contact.html">Contact</a>
+      </nav>      
+  </header>
+  <section id="home" class="home">
+    <div class="text-content">
+      <h1>Hello, I Am <span>Misxa Bien</span></h1>
+      <p> An Aspiring Project Manager</p>
+    </div>
+    <div class="image-content">
+        <img src="images/imageself.png" alt="Misxa Bien">
+      </div>
+  </section>
 </body>
 </html>
