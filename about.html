@@ -13,11 +13,13 @@
       font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth; 
     }
+
     body {
       background-color: #48374c;
       color: #f8f8d2;
       overflow-x: hidden;
     }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -28,67 +30,94 @@
       top: 0;
       left: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.6);
+      background: #c7b3d8;
       backdrop-filter: blur(10px);
     }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
+
+    .logo img {
+      width: 50px;
+      height: 50px;
     }
+
     nav a {
-      color: #f8f8d2;
+      color: #48374c;
       text-decoration: none;
       margin: 0 15px;
       font-weight: 500;
       padding: 10px 15px;
       border-radius: 20px;
-      transition: background 0.3s, transform 0.2s;
+      transition: background 0.3s, transform 0.2s, border 0.3s;
     }
+
     nav a:hover {
-      background-color: #7b5d83;
+      background-color: #c7b3d8;
       transform: translateY(-2px);
+      border: 2px solid #48374c; 
     }
+
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 120px 20px 80px;
+      position: relative;
+      background: radial-gradient(#f8f8d2 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: moveDots 20s linear infinite;
     }
+
+    @keyframes moveDots {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 100px 100px;
+      }
+    }
+
     .about-section {
-        max-width: 60%; 
-        margin: auto; 
-        text-align: center; 
-        line-height: 1.8;
-        padding: 40px;
-        background:#766077;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-   }
+      max-width: 60%; 
+      margin: auto; 
+      text-align: center; 
+      line-height: 1.8;
+      padding: 40px;
+      background: #766077;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
     h1 {
       font-size: 36px;
       margin-bottom: 20px;
       text-align: center;
+      color: #f8f8d2;
+    }
+
+    p {
+      font-size: 16px;
+      color: #f3f3df;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="images/logoweb.png" alt="MG Logo" width="50">
+      <img src="images/optionlogo.png" alt="MG Logo" width="50">
     </div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="techstack.html">Tech Stack</a>
-        <a href="certif.html">Certificates</a>
-        <a href="contact.html">Contact</a>
-      </nav> 
+      <a href="index.html">Home</a>
+      <a href="techstack.html">Tech Stack</a>
+      <a href="certif.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </nav> 
   </header>
+
   <div class="container">
     <div class="about-section">
       <h1>About Me</h1>
-      <p> Hello! I’m Misxa Bien Germino, a Bachelor of Science in Information Technology student passionate about tech and innovation. While I explore various IT fields, my goal is to become a project manager. I’ve gained valuable experience as an event host and manager, where I honed my organizational and leadership skills. These roles taught me how to work efficiently under pressure and strengthened my communication and problem-solving abilities.</p>
-     <p> Being naturally extroverted, I connect easily with others and thrive in collaborative environments. I believe strong relationships and open communication are key to project success. With a detail-oriented and results-driven mindset, I’m ready to take on future challenges. I’m excited to keep learning and growing in the tech world.</p>
+      <p>Hello! I’m Misxa Bien Germino, a Bachelor of Science in Information Technology student passionate about tech and innovation. While I explore various IT fields, my goal is to become a project manager. I’ve gained valuable experience as an event host and manager, where I honed my organizational and leadership skills. These roles taught me how to work efficiently under pressure and strengthened my communication and problem-solving abilities.</p>
+      <p>Being naturally extroverted, I connect easily with others and thrive in collaborative environments. I believe strong relationships and open communication are key to project success. With a detail-oriented and results-driven mindset, I’m ready to take on future challenges. I’m excited to keep learning and growing in the tech world.</p>
     </div>
   </div>
 </body>
