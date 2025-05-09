@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Contact</title>
-        <link rel="icon" href="images/optionlogo.png" type="image/png" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-        <style>
-            * {
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link rel="icon" href="images/optionlogo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth; 
+      scroll-behavior: smooth;
     }
     body {
       background-color: #48374c;
@@ -39,10 +39,13 @@
       width: 50px;
       height: 50px;
     }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
     nav a {
       color: #48374c;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: 500;
       padding: 10px 15px;
       border-radius: 20px;
@@ -53,25 +56,37 @@
       transform: translateY(-2px);
       border: 2px solid #48374c;
     }
-    .certificates-section {
-      background-color: #3a2c44; 
-      color: #d3bce6; 
-      padding: 80px 20px;
-      text-align: center;
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #48374c;
     }
-    .section-title {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 40px;
-      color: #d3bce6;
-      font-family: 'Poppins', sans-serif;
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #c7b3d8;
+      border-radius: 12px;
+      padding: 10px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 999;
     }
-
-    .section-subtext {
-      font-size: 1.5rem;
-      font-family: 'Poppins', sans-serif;
+    .mobile-menu a {
+      color: #48374c;
+      text-decoration: none;
+      padding: 8px 0;
+      font-weight: 500;
     }
-
+    .mobile-menu.active {
+      display: flex;
+    }
     .moving-dots-background {
       position: fixed;
       top: 0;
@@ -84,36 +99,148 @@
       background-size: 30px 30px;
       animation: moveDots 20s linear infinite;
     }
-
     @keyframes moveDots {
-      0% {
-        background-position: 0 0;
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+    .contact-section {
+      padding-top: 120px;
+      text-align: center;
+    }
+    .contact-section h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .contact-section p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 16px;
+    }
+    form.contact-form {
+      background-color: #c7b3d8;
+      padding: 18px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #48374c;
+    }
+    form.contact-form input,
+    form.contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 20px;
+      background-color: #48374c;
+      color: #c7b3d8;
+      font-size: 14px;
+    }
+    form.contact-form textarea {
+      resize: none;
+      border-radius: 10px;
+      height: 80px;
+    }
+    form.contact-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #48374c;
+      color: #c7b3d8;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-section h1,
+    .contact-section p {
+       color: #c7b3d8;
+}
+    form.contact-form button:hover {
+      background-color: #5a4561;
+    }
+    .social-icons {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #c7b3d8;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .social-icons img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+}
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
       }
-      100% {
-        background-position: 100px 100px;
+      nav {
+        display: none;
       }
     }
-</style>
-    </head>
-    <body>
-    <header>
-        <div class="logo">
-        <img src="images/optionlogo.png" alt="MG Logo" />
-        </div>
-        <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="certif.html">Certificates</a>
-        <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/optionlogo.png" alt="MG Logo"></a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <nav>
+      <a href="about.html">About Me</a>
+      <a href="techstack.html">Tech Stack</a>
+      <a href="certif.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-    <div class="moving-dots-background"></div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="about.html">About Me</a>
+      <a href="techstack.html">Tech Stack</a>
+      <a href="certif.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
 
-    <section class="contact-section">
-      <h2 class="contact">Contact</h2>
-      <p class="subtext">
-        Tawagan mo ako pag ginaanon ka nanaman nya, ako na lang kasi. NAMO JEAN!!
-      </p>
-    </section>
-    
+  <div class="moving-dots-background"></div>
+
+  <section class="contact-section">
+    <h1>Contact</h1>
+    <p>Thinking about working together? Or maybe you just want to ask something? Hit me up on any of the platforms below — I’m always around!</p>
+
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/" target="_blank">
+        <img src="images/linkedinfinallogo.png" alt="LinkedIn Logo">LinkedIn
+      </a>
+      <a href="https://github.com/misxabien/portfolio.git" target="_blank">
+        <img src="images/githublogo.png" alt="GitHub Logo">GitHub
+      </a>
+    </div>
+  </section>
+
+    <form class="contact-form" action="contact.html" method="POST" onsubmit="this.reset(); return true;">
+      <input type="text" name="name" placeholder="Your Name:" required />
+      <input type="email" name="email" placeholder="Your Email:" required />
+      <textarea name="message" placeholder="Your Message:" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
