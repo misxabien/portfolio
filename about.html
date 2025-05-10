@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,6 +57,11 @@
       transform: translateY(-2px);
       border: 2px solid #48374c; 
     }
+    nav a.active {
+      background-color: #c7b3d8;
+      border: 2px solid #48374c;
+      border-radius: 20px;
+}
 
     .container {
       display: flex;
@@ -80,48 +84,69 @@
       }
     }
 
+    .about-wrapper {
+      max-width: 60%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-wrapper h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #c7b3d8;
+    }
+
     .about-section {
-      max-width: 60%; 
-      margin: auto; 
-      text-align: center; 
-      line-height: 1.8;
-      padding: 40px;
       background: #c7b3d8;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      text-align: center;
+    .about-section p {
       color: #48374c;
-    }
-
-    p {
       font-size: 16px;
-      color:#48374c;
+      line-height: 1.8;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="images/optionlogo.png" alt="MG Logo" width="50">
+      <a href="index.html"><img src="images/optionlogo.png" class="logo-img"></a>
     </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="about.html">About Me</a>
+      <a href="techstack.html">Tech Stack</a>
+      <a href="certif.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    
     <nav>
-      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Me</a>
       <a href="techstack.html">Tech Stack</a>
       <a href="certif.html">Certificates</a>
       <a href="contact.html">Contact</a>
     </nav> 
+   
   </header>
 
   <div class="container">
-    <div class="about-section">
+    <div class="about-wrapper">
       <h1>About Me</h1>
-      <p>Hello! I’m Misxa Bien Germino, a Bachelor of Science in Information Technology student passionate about tech and innovation. While I explore various IT fields, my goal is to become a project manager. I’ve gained valuable experience as an event host and manager, where I honed my organizational and leadership skills. These roles taught me how to work efficiently under pressure and strengthened my communication and problem-solving abilities.</p>
-      <p>Being naturally extroverted, I connect easily with others and thrive in collaborative environments. I believe strong relationships and open communication are key to project success. With a detail-oriented and results-driven mindset, I’m ready to take on future challenges. I’m excited to keep learning and growing in the tech world.</p>
+
+      <div class="about-section">
+        <p>
+          Hello! I’m Misxa Bien Germino, a Bachelor of Science in Information Technology student with a strong passion for technology, innovation, and leadership. As I continue to explore the many fields within IT, I’m steadily working toward my goal of becoming a project manager—someone who not only leads, but also inspires and creates meaningful impact through technology.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <p>
+          My experience as an event host and manager has strengthened my leadership, communication, and problem-solving skills, which I believe are essential for a successful project manager. I enjoy working with people, thrive in collaborative spaces, and value clear communication and strong relationships. With a detail-focused and goal-driven mindset, I’m eager to contribute to tech projects that make a real difference. I aspire to lead initiatives that not only deliver results but also promote innovation, inclusivity, and social impact. By combining technical knowledge with human-centered leadership, I hope to build solutions that empower teams and benefit communities.
+      </div>
     </div>
   </div>
 </body>
