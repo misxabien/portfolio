@@ -5,317 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Misxa Bien Germino | Tech Stack</title>
   <link rel="icon" href="images/optionlogo.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth; 
-    }
-    body {
-      background-color: #48374c;
-      color: #f8f8d2;
-      overflow-x: hidden;
-      height: 100vh;
-      min-height: 100%;
-      position: relative;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 80px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      background-color: #c7b3d8;
-      backdrop-filter: blur(10px);
-    }
-    .logo img {
-      width: 50px;
-      height: 50px;
-    }
-    nav a {
-      color: #48374c;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      padding: 10px 15px;
-      border-radius: 20px;
-      transition: background 0.3s, transform 0.2s, border 0.3s;
-    }
-    nav a:hover {
-      background-color:#c7b3d8;
-      transform: translateY(-2px);
-      border: 2px solid #48374c; 
-    }  
-    .hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #48374c;
-      z-index: 1100;
-    }
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #c7b3d8;
-      border-radius: 12px;
-      padding: 10px 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      text-align: center;
-      z-index: 1050;
-}
-    .mobile-menu a {
-      color: #48374c;
-      text-decoration: none;
-      padding: 8px 0;
-      font-weight: 500;
-      font-size: 16px;
-    }
-    .mobile-menu a:hover {
-      text-decoration: underline;
-    }
-    .mobile-menu.active {
-      display: flex;
-    }
-    .tech-stack {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 120px 20px 80px;
-    }
-    .tech-stack h1 {
-      margin-bottom: 15px;
-      font-size: 36px;
-      font-weight: 700;
-    }
-    .tech-stack p {
-      font-size: 16px;
-      margin-bottom: 40px;
-      color:#c7b3d8;
-    }
-    .stack-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin-bottom: 30px;
-    }
-    .stack-item {
-      background-color:#c7b3d8;
-      border-radius: 12px;
-      padding: 20px;
-      width: 160px;
-      height: 160px;
-      border: 2px solid #c7b3d8; 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.2s;
-    }
-    .stack-item img {
-      width: 70px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .stack-item span {
-      font-weight: 700;
-      color: #48374c;
-      font-size: 14px;
-      text-transform: uppercase;
-      text-align: center;
-    }
-    .stack-item:hover {
-      transform: scale(1.05);
-      cursor: pointer;
-    }
-    .tab-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-    .tab-btn {
-      padding: 10px 20px;
-      background-color:  #48374c;
-      border-radius: 20px;
-      color: #c7b3d8;
-      border: 2px solid#c7b3d8;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .tab-btn.active {
-      background-color:  #c7b3d8;
-      color:  #48374c;
-      border: 2px solid  #c7b3d8;
-    }
-    .tab-btn:hover {
-      background-color: rgba(199, 179, 216, 0.4); 
-      transform: translateY(-2px);
- }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin-bottom: 30px;
-    }
-    @keyframes moveDots {
-      0% {
-        background-position: 0 0;
-      }
-      100% {
-        background-position: 100px 100px;
-      }
-    }
-    .moving-dots-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background-color: #48374c;
-      background-image: radial-gradient(#f8f8d2 1px, transparent 1px);
-      background-size: 30px 30px;
-      animation: moveDots 20s linear infinite;
-    }
-    .text-content p {
-      font-size: 18px;
-      color:#c7b3d8;
-    }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 3px;
-      margin: 20px 0;
-      font-weight: 700;
-      color:#c7b3d8;
-    }
-    h2 {
-      font-size: 30px;
-      margin: 10px 0;
-      font-weight: 700;
-      color:#c7b3d8;
-    }
-    h3 {
-      font-size: 30px;
-      margin: 10px 0;
-      font-weight: 700;
-      color:#c7b3d8;
-    }
-    .image-content img {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    section {
-      padding: 100px 80px;
-    }
-    @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-  nav {
-    display: none;
-  }
-  .home {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 140px;
-  }
-  .image-content img {
-    margin-top: 20px;
-    width: 250px;
-    height: 250px;
-  }
-  h1 {
-    font-size: 40px;
-    color:#c7b3d8;
-  }
-  .text-content p {
-    font-size: 16px;
-    color:#c7b3d8;
-  }
-  .tech-stack p {
-    text-align: center;
-  }
-}
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .home {
-        padding-top: 160px;
-        gap: 40px;
-      }
-      h1 {
-        font-size: 42px;
-        color:#c7b3d8;
-      }
-      .text-content p {
-        font-size: 16px;
-        color:#c7b3d8;
-        text-align: center;
-      }
-      .image-content img {
-        width: 270px;
-        height: 270px;
-      }
-      .tech-stack p {
-    text-align: center;
-     }
-    }
-    @media (max-width: 320px) {
-      h1 {
-        font-size: 32px;
-        color:#c7b3d8;
-      }
-      .text-content p {
-        font-size: 16px;
-        color:#c7b3d8;
-        text-align: center;
-      }
-      .image-content img {
-        width: 200px;
-        height: 200px;
-      }
-      .tech-stack p {
-    text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="logo">
-      <a href="index.html"><img src="images/optionlogo.png" class="logo-img"></a>
+      <a href="index.html"><img src="images/optionlogo.png" alt="logo-img" /></a>
     </div>
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">☰</button>
     <div class="mobile-menu" id="mobile-menu">
       <a href="about.html">About Me</a>
       <a href="techstack.html">Tech Stack</a>
       <a href="certif.html">Certificates</a>
       <a href="contact.html">Contact</a>
     </div>
-    
+
     <nav>
       <a href="about.html">About Me</a>
       <a href="techstack.html">Tech Stack</a>
@@ -329,76 +34,30 @@
   <section class="tech-stack">
     <h1>Tech Stack</h1>
     <p>I use these technologies to build clean, fast, and functional projects, because great software starts with the right stack.</p>
+    
     <div class="tab-buttons">
       <button class="tab-btn active" onclick="showTab('languages', this)">Languages</button>
       <button class="tab-btn" onclick="showTab('tools', this)">Development Tools</button>
     </div>
+
     <div id="languages" class="tab-content active">
-      <div class="stack-item">
-        <img src="images/clogo.png" alt="C Language">
-        <span>C </span>
-      </div>
-      <div class="stack-item">
-        <img src="images/javalogo.png" alt="Java">
-        <span>Java</span>
-      </div>
-      <div class="stack-item">
-        <img src="images/sqllogo.png" alt="Database">
-        <span>SQL</span>
-      </div>
-      <div class="stack-item">
-        <img src="images/htmllogo.png" alt="HTML">
-        <span>HTML</span>
-      </div>
-      <div class="stack-item">
-        <img src="images/csslogo.png" alt="CSS">
-        <span>CSS</span>
-      </div>
-    </div>
-    <div id="tools" class="tab-content">
-      <div class="stack-item">
-        <img src="images/aslogo.png" alt="Android Studio">
-        <span>Android Studio</span>
-      </div>
-        <div class="stack-item">
-        <img src="images/netbeanslogo.png" alt="Netbeans">
-        <span>Netbeans</span>
-      </div>
-      <div class="stack-item">
-        <img src="images/oracleapex.png" alt="Oracle Apex">
-        <span>Oracle Apex</span>
-      </div>
-          <div class="stack-item">
-        <img src="images/githublogo.png" alt="Github">
-        <span>Github</span>
-      </div>
-      <div class="stack-item">
-        <img src="images/vscodelogo.png" alt="VS Code">
-        <span>VS Code</span>
-      </div>
-        <div class="stack-item">
-        <img src="images/Git.png" alt="Git">
-        <span>Git</span>
-      </div>
+      <div class="stack-item"><img src="images/clogo.png" alt="C Language" /><span>C</span></div>
+      <div class="stack-item"><img src="images/javalogo.png" alt="Java" /><span>Java</span></div>
+      <div class="stack-item"><img src="images/javaslogo.png" alt="SQL" /><span>JavaScript</span></div>
+      <div class="stack-item"><img src="images/htmllogo.png" alt="HTML" /><span>HTML</span></div>
+      <div class="stack-item"><img src="images/csslogo.png" alt="CSS" /><span>CSS</span></div>
     </div>
 
+    <div id="tools" class="tab-content" hidden>
+      <div class="stack-item"><img src="images/aslogo.png" alt="Android Studio" /><span>Android Studio</span></div>
+      <div class="stack-item"><img src="images/netbeanslogo.png" alt="NetBeans" /><span>NetBeans</span></div>
+      <div class="stack-item"><img src="images/oracleapex.png" alt="Oracle Apex" /><span>Oracle Apex</span></div>
+      <div class="stack-item"><img src="images/githublogo.png" alt="GitHub" /><span>GitHub</span></div>
+      <div class="stack-item"><img src="images/vscodelogo.png" alt="VS Code" /><span>VS Code</span></div>
+      <div class="stack-item"><img src="images/Git.png" alt="Git" /><span>Git</span></div>
+    </div>
   </section>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('mobile-menu').classList.toggle('active');
-    }
-
-    function showTab(tabId, clickedButton) {
-      const contents = document.querySelectorAll('.tab-content');
-      const buttons = document.querySelectorAll('.tab-btn');
-
-      contents.forEach(content => content.classList.remove('active'));
-      buttons.forEach(btn => btn.classList.remove('active'));
-
-      document.getElementById(tabId).classList.add('active');
-      clickedButton.classList.add('active');
-    }
-  </script>
+  <script src="techstack.js"></script>
 </body>
 </html>
